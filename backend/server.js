@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
+const connectMongoose = require('./helpers/mongoose');
 const api = require('./routes/api');
 
 const PORT = process.env.PORT || 3016;
@@ -27,7 +28,13 @@ const createServer = () => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
 
-  app.listen(PORT);
+  connectMongoose()
+    .then(() => {
+      app.listen(PORT);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 };
 
 createServer();

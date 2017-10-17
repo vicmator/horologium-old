@@ -1,11 +1,11 @@
 module.exports = {
   extends: [
     'eslint:recommended',
-    'airbnb-base'
+    'airbnb-base',
   ],
   env: {
     es6: true,
-    node: true
+    node: true,
   },
   rules: {
     'comma-dangle': ['error', {
@@ -13,7 +13,7 @@ module.exports = {
       objects: 'always-multiline',
       imports: 'always-multiline',
       exports: 'always-multiline',
-      functions: 'never'
-    }]
-  }
+      functions: 'never',
+    }],
+  },
 };

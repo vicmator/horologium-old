@@ -32,9 +32,8 @@ const createServer = () => {
     .then(() => {
       app.listen(PORT);
     })
-    .catch((err) => {
-      console.error(err);
-    });
+    // eslint-disable-next-line no-console
+    .catch(console.error);
 };
 
 createServer();

@@ -13,3 +13,9 @@ Currently under development
 * Copy backend/config.json.dist to backend/config.json and give desired values
 * npm install
 * npm start
+
+## NPM scripts
+
+* npm start - starts de server
+* npm run create-user -- \<email\> \<password\> - creates an user
+* npm run change-password -- \<email\> \<password\> - changes the password of a given user

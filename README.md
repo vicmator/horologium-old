@@ -8,7 +8,7 @@ Currently under development
 * Node 8.x.x
 * MongoDB 3.4.x
 
-## How To start de application:
+## How To start the application:
 
 * Copy backend/config.json.dist to backend/config.json and give desired values
 * npm install

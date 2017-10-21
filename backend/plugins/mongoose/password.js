@@ -37,7 +37,7 @@ module.exports = (schema, {
   });
 
   // eslint-disable-next-line no-param-reassign
-  schema.methods[comparisonFunction] = function (candidate) {
+  schema.methods[comparisonFunction] = function comparePassword(candidate) {
     return bcrypt.compare(candidate, this.password)
       .catch(() => false);
   };

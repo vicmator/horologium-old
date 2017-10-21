@@ -1,15 +1,37 @@
 /**
- * Express middleware that adds a custom error handler to response
- * @param {Request} req
+ * Error handler
+ * @param {Error} err
  * @param {Response} res
- * @param {function} next
  */
-module.exports = (req, res, next) => {
-  res.handleError = (error) => {
-    const statusCode = error.statusCode || 500;
+const handleError = (err, res) => {
+  const statusCode = err.statusCode || 500;
+  res.status(statusCode).send();
+};
 
-    res.status(statusCode).send();
-  };
+module.exports = {
+  /**
+   * Express middleware that adds a custom error handler to response
+   * @param {Request} req
+   * @param {Response} res
+   * @param {function} next
+   */
+  responseErrorHandler: (req, res, next) => {
+    res.errorHandler = (err) => {
+      handleError(err, res);
+    };
 
-  next();
+    next();
+  },
+
+  /**
+   * Express erro middleware
+   * @param {Error} err
+   * @param {Request} req
+   * @param {Response} res
+   * @param {function} next
+   */
+  // eslint-disable-next-line no-unused-vars
+  errorHandler: (err, req, res, next) => {
+    handleError(err, res);
+  },
 };

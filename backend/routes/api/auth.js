@@ -51,12 +51,11 @@ router.post('/token', (req, res) => {
             throw new Unauthorized();
           }
 
-          generateToken(user)
-            .then(token => res.send({ token }))
-            .catch(res.handleError);
+          return generateToken(user)
+            .then(token => res.send({ token }));
         });
     })
-    .catch(res.handleError);
+    .catch(res.errorHandler);
 });
 
 module.exports = router;

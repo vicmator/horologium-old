@@ -6,6 +6,12 @@ const ERROR_CODES = {
   500: 'Internal Server Error',
 };
 
+/**
+ * Error class factory function
+ * @param {number} statusCode
+ * @param {string} message
+ * @return {class}
+ */
 const statusCodeFactory = (statusCode, message) => class StatusCodeError extends Error {
   constructor(errorMessage = message) {
     super(errorMessage);
@@ -13,6 +19,7 @@ const statusCodeFactory = (statusCode, message) => class StatusCodeError extends
   }
 };
 
+// Module exports will look like { BadRequest: <class>, ...}
 module.exports = Object.keys(ERROR_CODES).reduce(
   (accumulated, code) => ({
     ...accumulated,

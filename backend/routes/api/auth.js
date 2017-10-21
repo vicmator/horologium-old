@@ -16,7 +16,7 @@ const generateToken = user => new Promise((res, rej) => {
   sign(
     {
       // eslint-disable-next-line no-underscore-dangle
-      id: user._id,
+      userId: user._id,
     },
     config.authentication.jwtSecret,
     {

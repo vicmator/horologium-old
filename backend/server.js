@@ -4,9 +4,13 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const passport = require('passport');
 
+const config = require('./config.json');
 const connectMongoose = require('./helpers/mongoose');
+const { setEnvironment } = require('./helpers/env');
 const { errorHandler, responseErrorHandler } = require('./plugins/express/errorHandler');
 const api = require('./routes/api');
+
+setEnvironment(config.environment);
 
 const PORT = process.env.PORT || 3016;
 

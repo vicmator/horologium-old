@@ -1,3 +1,5 @@
+const { isDevelopment } = require('../../helpers/env');
+
 /**
  * Error handler
  * @param {Error} err
@@ -5,7 +7,15 @@
  */
 const handleError = (err, res) => {
   const statusCode = err.statusCode || 500;
-  res.status(statusCode).send();
+  res.status(statusCode);
+
+  if (isDevelopment()) {
+    res.send({
+      message: err.message,
+      stack: err.stack,
+    });
+  }
+  res.end();
 };
 
 module.exports = {

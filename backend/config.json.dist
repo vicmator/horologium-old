@@ -1,4 +1,5 @@
 {
+  "environment": "development",
   "mongodb": {
     "host": "localhost",
     "port": 27017,

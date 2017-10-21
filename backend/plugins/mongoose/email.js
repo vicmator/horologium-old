@@ -3,7 +3,7 @@
  * @param {string} field
  * @param {boolean} required
  * @param {boolean} unique
- * @param {regex} match
+ * @param {RegExp} match
  * @param {string} doesNotMatchMessage
  */
 module.exports = (schema, {

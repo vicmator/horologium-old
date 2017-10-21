@@ -2,14 +2,19 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const passport = require('passport');
 
 const connectMongoose = require('./helpers/mongoose');
+const errorHandler = require('./plugins/express/errorHandler');
 const api = require('./routes/api');
 
 const PORT = process.env.PORT || 3016;
 
 const createServer = () => {
   const app = express();
+
+  // Initialize passport
+  app.use(passport.initialize());
 
   // Configure body parser to accept json
   app.use(bodyParser.json());
@@ -19,6 +24,9 @@ const createServer = () => {
 
   // Register HTTP request logger
   app.use(morgan('dev'));
+
+  // Register custom error handler
+  app.use(errorHandler);
 
   // Register API routes
   app.use('/api', api);

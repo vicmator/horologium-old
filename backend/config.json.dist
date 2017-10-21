@@ -5,6 +5,7 @@
     "database": "horologium"
   },
   "authentication": {
-    "secret": "RANDMON STRING"
+    "jwtSecret": "RANDMON STRING",
+    "jwtExpiration": "30m"
   }
 }

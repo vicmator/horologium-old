@@ -5,11 +5,13 @@ const bcrypt = require('bcrypt');
  * @param {string} field
  * @param {boolean} required
  * @param {int} saltingRounds
+ * @param {string} comparisonFunction
  */
 module.exports = (schema, {
   field = 'password',
   required = true,
   saltingRounds = 10,
+  comparisonFunction = 'comparePassword',
 } = {}) => {
   schema.add({
     [field]: {
@@ -35,8 +37,8 @@ module.exports = (schema, {
   });
 
   // eslint-disable-next-line no-param-reassign
-  schema.methods.comparePassword = function comparePassword(candidatePassword) {
-    return bcrypt.compare(candidatePassword, this.password)
+  schema.methods[comparisonFunction] = function (candidate) {
+    return bcrypt.compare(candidate, this.password)
       .catch(() => false);
   };
 };

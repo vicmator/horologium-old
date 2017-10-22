@@ -34,7 +34,7 @@ module.exports = {
   },
 
   /**
-   * Express erro middleware
+   * Express error middleware
    * @param {Error} err
    * @param {Request} req
    * @param {Response} res

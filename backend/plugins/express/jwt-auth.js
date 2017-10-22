@@ -10,7 +10,7 @@ const params = {
 };
 
 /**
- * JWT strategy that will extend resonse with a new user property containing the id
+ * JWT strategy that will extend response with a new user property containing the id
  */
 const strategy = new Strategy(params, (payload, done) => {
   if (payload.userId) {

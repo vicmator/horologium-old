@@ -1,10 +1,12 @@
 {
+  "environment": "development",
   "mongodb": {
     "host": "localhost",
     "port": 27017,
     "database": "horologium"
   },
   "authentication": {
-    "secret": "RANDMON STRING"
+    "jwtSecret": "RANDMON STRING",
+    "jwtExpiration": "30m"
   }
 }

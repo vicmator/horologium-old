@@ -13,6 +13,7 @@ const RecordSchema = new mongoose.Schema({
   },
   end: {
     type: Date,
+    default: null,
   },
 }, { collection: 'records' })
   .plugin(owner)

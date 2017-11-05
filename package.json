@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ng": "ng",
+    "ng-start": "ng serve",
+    "ng-build": "ng build",
+    "ng-test": "ng test",
+    "ng-lint": "ng lint",
+    "ng-e2e": "ng e2e"
   },
   "repository": {
     "type": "git",
@@ -28,11 +34,43 @@
     "mongoose": "^4.12.3",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
-    "passport-jwt": "^3.0.0"
+    "passport-jwt": "^3.0.0",
+    "@angular/animations": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/http": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/router": "^5.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.4.1",
+    "tslint-config-airbnb": "^5.3.0",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint-plugin-import": "^2.7.0",
+    "@angular/cli": "1.5.0",
+    "@angular/compiler-cli": "^5.0.0",
+    "@angular/language-service": "^5.0.0",
+    "@types/jasmine": "~2.6.2",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~8.0.47",
+    "codelyzer": "~4.0.1",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.2.0",
+    "ts-node": "~3.3.0",
+    "tslint": "~5.8.0",
+    "typescript": "~2.6.1"
   }
 }

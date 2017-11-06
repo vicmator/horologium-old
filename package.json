@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "create-user": "node backend/commands/users create",
+    "change-password": "node backend/commands/users change-password",
     "ng": "ng",
     "ng-start": "ng serve",
     "ng-build": "ng build",
@@ -15,23 +17,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomaccodev/horologium.git"
+    "url": "git+https://github.com/deviatan/horologium.git"
   },
-  "author": {
-    "name": "Dani Lupión",
-    "email": "danilupion@gmail.com"
-  },
+  "contributors": [
+    {
+      "name": "Dani Lupión",
+      "email": "danilupion@gmail.com"
+    }
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tomaccodev/horologium/issues"
+    "url": "https://github.com/deviatan/horologium/issues"
   },
-  "homepage": "https://github.com/tomaccodev/horologium#readme",
+  "homepage": "https://github.com/deviatan/horologium#readme",
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
-    "mongoose": "^4.12.3",
+    "minimist": "^1.2.0",
+    "mongoose": "^4.12.4",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.0",
@@ -52,7 +57,14 @@
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.7.0",
+    "gulp-watch": "^4.3.11",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-develop-server": "^0.5.2",
+    "gulp-eslint": "^4.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
     "@angular/cli": "1.5.0",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",

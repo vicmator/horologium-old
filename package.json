@@ -23,6 +23,10 @@
     {
       "name": "Dani Lupión",
       "email": "danilupion@gmail.com"
+    },
+    {
+      "name": "Victor Manuel Fernández López",
+      "email": "v.manuelfernandezlopez@gmail.com"
     }
   ],
   "license": "ISC",
@@ -64,7 +68,6 @@
     "gulp-develop-server": "^0.5.2",
     "gulp-eslint": "^4.0.0",
     "gulp-util": "^3.0.8",
-    "gulp-watch": "^4.3.11",
     "@angular/cli": "1.5.0",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",

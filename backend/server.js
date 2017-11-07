@@ -12,7 +12,7 @@ const api = require('./routes/api');
 
 setEnvironment(config.environment);
 
-const PORT = process.env.PORT || 3016;
+const PORT = config.server.port;
 
 const createServer = () => {
   const app = express();

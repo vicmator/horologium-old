@@ -1,4 +1,5 @@
 const path = require('path');
+const gulp = require('gulp');
 const server = require('gulp-develop-server');
 
 const simpleTaskFactory = require('../utils/taskFactories/simpleTaskFactory');
@@ -24,7 +25,7 @@ module.exports = simpleTaskFactory(
       }
     };
 
-    const watch = watchUtil(config.watch || config.path, start);
+    const watch = gulp.parallel(start, watchUtil(config.watch || config.path, start));
     watch.displayName = 'server:watch';
 
     return {
